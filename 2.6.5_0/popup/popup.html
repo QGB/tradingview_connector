@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>TradingView Alerts to MT4</title>
+    <link rel="icon" href="../icon.png">
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <link rel="stylesheet" type="text/css" href="switch.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://www.paypal.com/sdk/js?client-id=ASM6obyooTOQwqxOK1qGHxq0-19kp7UOKDaEjBdraoheYpLCGVMFv5LtttjgivqnoPMkVtp-uIevlwPB&vault=true&intent=subscription" data-sdk-integration-source="button-factory"></script>
+</head>
+<body>
+<h3>TRADING CONNECTOR: Send TradingView Alerts to MT4/MT5</h3>
+<label class="pure-material-switch hidden">
+    <input type="checkbox" id="toggle_debug">
+    <span>Debug</span>
+</label>
+
+<section>
+    <header>
+        <div class="col1">Account</div>
+        <div class="col4">Details</div>
+        <div class="col">Status</div>
+    </header>
+    <div id="chrome-account" class="row">
+        <div class="col1">Chrome identity</div>
+        <div class="col4" id="chrome-account-email">Sign in to Chrome</div>
+        <div class="col danger" id="chrome-account-status" style="font-weight:bold">X</div>
+    </div>
+    <div id="tradingview-account" class="row">
+        <div class="col1">
+            TradingView
+        </div>
+        <div class="col4" id="trdvw_user_name" style="flex:3">
+            Login to TradingView and keep tab opened
+        </div>
+        <div class="col danger" id="tradingview-account-status" style="font-weight:bold">X</div>
+    </div>
+    <div id="paypal-subscription" class="row">
+        <div class="col1">TradingConnector License</br>(set-up via PayPal * )</div>
+        <div class="col4" id="paypal_subscription_id" style="flex:3">Start subscription from table below</br> or
+            <a id="add_subscription_id_form" href="">Add manually</a>
+        </div>
+        <div class="col danger" id="paypal-subscription-status" style="font-weight:bold">X</div>
+    </div>
+    <div><small>* TradingConnector uses PayPal as licensing server, so all subscriptions must be set-up via PayPal.</small></div>
+    <form id="subscription_id_form" class="row hidden">
+        <label>
+            subscriptionID: <input name="id" placeholder="Example: I-ABCDEFGHIJ12"> <br/>
+            <small> this field cannot be empty, find it in the email you receive from PayPal after subscribing</small>
+        </label>
+        <button class="btn" type="submit">Replace</button>
+    </form>
+</section>
+
+<div align=left>
+    <strong><br/>At all times:</strong><br/>
+    <li> All three lines above must be marked with <strong class="success">✓</strong>.</li>
+    <li> Be signed-in to Chrome with same account you were signed-in to when starting a subscription.</li>
+    <li> Refresh TradingView in Chrome AFTER restarting TradingConnector.exe app.</li>
+</div>
+
+<p>
+    <strong>TradingConnector can be used under one of the following licenses:</strong>
+</p>
+<table id="trvmt4-subscriptions">
+    <thead>
+    <tr>
+        <td>License type</td>
+        <td>Description</td>
+        <td>Price</td>
+        <td>PayPal or Credit Card</td>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td>Monthly</td>
+        <td>Unlimited signals.<br/><span style="color: forestgreen">Starts with 7 days free trial.</span></td>
+        <td>$14.99 monthly</td>
+        <td id="premium1"></td>
+    </tr>
+    <tr>
+        <td>Monthly. Multiple Accounts.</td>
+        <td>Connect multiple accounts or brokers, with multiple MT4/5's on the same computer.</td>
+        <td>$49.99 monthly</td>
+        <td id="premium2"></td>
+    </tr>
+    <tr>
+        <td>Yearly</td>
+        <td>Unlimited signals, 12-months license.</td>
+        <td>$149.00 annually</td>
+        <td id="premium1yearly"></td>
+    </tr>
+    <tr>
+        <td>Yearly. <br/><br/>Multiple Accounts.</td>
+        <td>
+            Connect multiple accounts or brokers, with multiple MT4/5's on the same computer. 12-months.
+            <p style="background-color:white"> +
+                <a href="https://bit.ly/3tIHsrA" target='_blank' style="color: #34495e">WHITE-GLOVE</a>
+                setup assistance<br/>or<br/><a href="https://bit.ly/3En3NQc" target='_blank' style="color: #34495e">PIVOT POINTS ON S/R</a> indicator
+            </p>
+        </td>
+        <td>$499.00 annually</td>
+        <td id="premium2yearly"></td>
+    </tr>
+    </tbody>
+</table>
+<div align=left><i>HINT: You can also make money with us via our <a href="https://www.tradingconnector.com/affiliate-program" target='_blank' style="color: #34495e">Affiliate Program</a></i></div>
+<script src="../lib/affiliate.js"></script>
+<script src="../js/functions.js"></script>
+<script src="popup.js"></script>
+</body>
+</html>
